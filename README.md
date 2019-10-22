@@ -1,6 +1,8 @@
 # React Hacker News clone
 A Hacker News clone created using React, Redux and Redux Saga.
 
+Live demo: https://hacker-news-clone.flix.industries/
+
 ## Features
 - Ability to search for posts from Hacker News.
 - Displays the title, author, number of comments and number of points of individual posts.
