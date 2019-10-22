@@ -4,8 +4,8 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
 import store from './store';
-import { ARCHIVE_STORY } from './constants/actionTypes';
 import { getReadableStories } from './selectors/story';
+import { doArchiveStory } from './actions/archive';
 
 import './index.css';
 
@@ -13,7 +13,8 @@ function render() {
     ReactDOM.render(
         <App stories={getReadableStories(store.getState())} onArchive={(id) => {
             store.dispatch(
-                { type: ARCHIVE_STORY, id })
+                doArchiveStory(id)
+            )
         }} />,
         document.getElementById('root')
     );
