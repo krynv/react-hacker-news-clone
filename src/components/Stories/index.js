@@ -20,34 +20,35 @@ const COLUMNS = {
         label: 'Points',
         width: '10%',
     },
-    dismiss: {
+    archive: {
         width: '10%',
     },
 };
 
-class Stories extends React.Component {
-    render() {
-        const { stories, onDismiss } = this.props;
+const Stories = ({ stories, onArchive }) => {
 
-        return (
-            <div className="stories">
-                <StoriesHeader columns={COLUMNS} />
+    return (
+        <div className="stories">
+            <StoriesHeader columns={COLUMNS} />
 
-                {(stories || []).map(story =>
-                    <Story key={story.objectID} story={story} columns={COLUMNS} onDismiss={onDismiss} />
-                )}
-            </div>
-        );
-    }
-}
+            {(stories || []).map(story =>
+                <Story key={story.objectID} story={story} columns={COLUMNS} onArchive={onArchive} />
+            )}
+        </div>
+    );
+};
 
-const StoriesHeader = ({ columns }) =>
-    <div className="stories-header">
-        {Object.keys(columns).map(key =>
-            <span key={key} style={{ width: columns[key].width }}>
-                {columns[key].label}
-            </span>
-        )}
-    </div>
+const StoriesHeader = ({ columns }) => {
+
+    return (
+        <div className="stories-header">
+            {Object.keys(columns).map(key =>
+                <span key={key} style={{ width: columns[key].width }}>
+                    {columns[key].label}
+                </span>
+            )}
+        </div>
+    );
+};
 
 export default Stories;
