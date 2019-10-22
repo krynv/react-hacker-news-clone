@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Story from '../Story';
-import { getReadableStories } from '../../selectors/story';
+import { getReadableStories, getFetchError } from '../../selectors/story';
 
 import './Stories.css';
 
@@ -28,11 +28,13 @@ const COLUMNS = {
     },
 };
 
-const Stories = ({ stories }) => {
+const Stories = ({ stories, error }) => {
 
     return (
         <div className="stories">
             <StoriesHeader columns={COLUMNS} />
+
+            {error && <p className="error">There has been an error fetching results</p>}
 
             {(stories || []).map(story =>
                 <Story key={story.objectID} story={story} columns={COLUMNS} />
@@ -56,6 +58,7 @@ const StoriesHeader = ({ columns }) => {
 
 const mapStateToProps = state => ({
     stories: getReadableStories(state),
+    error: getFetchError(state)
 });
 
 export default connect(

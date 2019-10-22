@@ -1,3 +1,4 @@
 export const ARCHIVE_STORY = 'ARCHIVE_STORY';
 export const FETCH_STORIES = 'FETCH_STORIES';
 export const ADD_STORIES = 'ADD_STORIES';
+export const FETCH_STORIES_ERROR = 'FETCH_STORIES_ERROR';

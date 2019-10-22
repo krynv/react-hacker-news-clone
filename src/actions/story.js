@@ -1,6 +1,7 @@
 import {
     ADD_STORIES, // adds them to the store
     FETCH_STORIES, // fetches them from the API
+    FETCH_STORIES_ERROR, // handles errors
 } from '../constants/actionTypes';
 
 const doAddStories = stories => ({
@@ -13,4 +14,9 @@ const doFetchStories = query => ({
     query,
 });
 
-export { doAddStories, doFetchStories };
+const doFetchStoriesError = error => ({
+    type: FETCH_STORIES_ERROR,
+    error,
+});
+
+export { doAddStories, doFetchStories, doFetchStoriesError };
