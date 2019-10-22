@@ -17,7 +17,7 @@ class SearchStories extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    onSubmit(event) {
+    onSubmit(e) {
         const { query } = this.state;
 
         if (query) {
@@ -25,11 +25,11 @@ class SearchStories extends React.Component {
             this.setState({ query: '' });
         }
 
-        event.preventDefault();
+        e.preventDefault();
     }
 
-    onChange(event) {
-        const { value } = event.target;
+    onChange(e) {
+        const { value } = e.target;
 
         this.setState({ query: value });
     }
