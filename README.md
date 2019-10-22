@@ -1,7 +1,5 @@
-# Hacker News Clone
-A Hacker News Clone created using React, Redux and Redux Saga.
-
-
+# React Hacker News clone
+A Hacker News clone created using React, Redux and Redux Saga.
 
 ## Features
 - Ability to search for posts from Hacker News.
